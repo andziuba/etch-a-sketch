@@ -1,0 +1,137 @@
+/* body */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: #0b3954;
+}
+
+/* header */
+
+h1 {
+    font-family: 'Handlee', cursive;
+    font-size: 52px;
+    color: #D9DCD6;
+    margin: 20px;
+}
+
+/* container */
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #26547c;
+    box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
+    width: 400px;
+    height: auto;
+    padding: 30px;
+}
+
+/* buttons */
+
+button {
+    background-color: #a53860;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #D9DCD6;
+    padding: 10px;
+    width: 140px;
+    border: 4px solid #0b3954;
+    cursor: pointer;
+}
+
+#black:hover {
+    background-color: #000000;
+}
+
+#rainbow:hover {
+    background-image: url(./images/spectrum.svg);
+    color: black;
+}
+
+#clear:hover {
+    opacity: 0.9;
+}
+
+.settings {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 20px 0;
+}
+
+/* grid */
+
+#grid {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    border: 8px solid #ff70a6;
+    border-radius: 2px;
+    box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
+}
+
+.square {
+    background-color: #D9DCD6;
+}
+
+/* footer */
+
+#footer {
+    color: #f9faf8;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer img {
+    width: 40px;
+    height: auto;
+}
+
+#footer img:hover {
+    opacity: .5;
+}
+
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    #container {
+        width: 300px;
+    }
+
+    #grid {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    #container {
+        width: 250px;
+    }
+
+    #grid {
+        width: 250px;
+        height: 250px;
+    }
+
+    button {
+        font-size: 10px;
+        width: 100px;
+    }
+}

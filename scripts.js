@@ -10,7 +10,7 @@ let size = 16;
 
 output.textContent = slider.value;
 
-let mouseDown = false;
+let pointerDown = false;
 
 function clearGrid() {
     Array.from(coloredSquare).forEach((coloredSquare) => {
@@ -27,7 +27,7 @@ function getRandomColor() {
 }
 
 function draw(e) {
-    if (e.type === "mouseover" && !mouseDown) return;
+    if (e.type === "mouseover" && !pointerDown) return;
     e.target.classList.add("colored");
     if (mode === "rainbow") e.target.style.backgroundColor = getRandomColor();
     else e.target.style.backgroundColor = "#000000";
@@ -40,9 +40,17 @@ function createGrid() {
     for (let i = 0; i < size * size; i++) {
         let square = document.createElement("div");
         square.classList.add("square");
+        
+        // mouse events
         square.addEventListener("mouseover", draw);
-        square.addEventListener("mousedown", () => (mouseDown = true));
-        square.addEventListener("mouseup", () => (mouseDown = false)); 
+        square.addEventListener("mousedown", () => (pointerDown = true));
+        square.addEventListener("mouseup", () => (pointerDown = false)); 
+        
+        // touch events
+        square.addEventListener("touchstart", draw);
+        square.addEventListener("touchmove", draw);
+        square.addEventListener("touchend", () => (pointerDown = false));
+
         grid.appendChild(square);
     }
 }

@@ -1,3 +1,3 @@
-The Odin Project: Etch-a-Sketch
+# Etch-a-Sketch
 
 [View the site](https://andziuba.github.io/etch-a-sketch/)
